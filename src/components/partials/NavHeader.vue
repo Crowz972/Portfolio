@@ -2,7 +2,7 @@
   <header
     class="container mx-auto flex w-full justify-between items-center h-[7vh] my-2 font-medium"
   >
-    <img src="/public/img/logo/logoV1.png" alt="Nathan Perrelet" class="h-full mr-12 py-1" />
+    <img src="/img/logo/logoV1.png" alt="Nathan Perrelet" class="h-full mr-12 py-1" />
     <nav class="flex justify-between w-full items-center lg:text-lg text-base">
       <ul class="flex gap-6">
         <li><router-link to="">About me</router-link></li>
@@ -21,13 +21,13 @@
         </div>
         <ul class="flex gap-8 items-center">
           <li>
-            <img src="/public/img/icons/discord.svg" alt="Discord" class="lg:w-[36px] w-[24px]" />
+            <img src="/img/icons/discord.svg" alt="Discord" class="lg:w-[36px] w-[24px]" />
           </li>
           <li>
-            <img src="/public/img/icons/linkedin.svg" alt="Linkedin" class="lg:w-[36px] w-[24px]" />
+            <img src="/img/icons/linkedin.svg" alt="Linkedin" class="lg:w-[36px] w-[24px]" />
           </li>
           <li>
-            <img src="/public/img/icons/github.svg" alt="Github" class="lg:w-[36px] w-[24px]" />
+            <img src="/img/icons/github.svg" alt="Github" class="lg:w-[36px] w-[24px]" />
           </li>
         </ul>
       </div>

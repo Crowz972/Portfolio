@@ -12,10 +12,7 @@
 defineProps<{
   name: string
   url?: string
-  type?: {
-    type: boolean
-    default: false
-  }
+  type?: boolean
 }>()
 </script>
 
