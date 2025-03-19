@@ -4,7 +4,7 @@
   >
     <h2 class="font-semibold text-xl leading-tight h-[20%]">{{ name }}</h2>
     <img :src="'/img/icons/' + img + '.svg'" :alt="name" class="h-[50%] p-4" />
-    <p class="h-[30%] flex text-center items-center font-light">{{ content }}</p>
+    <p class="h-[30%] flex text-center items-center font-light text-sm">{{ content }}</p>
   </div>
 </template>
 

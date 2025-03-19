@@ -15,5 +15,3 @@ defineProps<{
   type?: boolean
 }>()
 </script>
-
-<style scoped></style>

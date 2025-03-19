@@ -21,13 +21,13 @@
         </div>
         <ul class="flex gap-8 items-center">
           <li>
-            <img src="/img/icons/discord.svg" alt="Discord" class="lg:w-[36px] w-[24px]" />
+            <img src="/img/icons/discord.svg" alt="Discord" class="lg:w-[24px] w-[18px]" />
           </li>
           <li>
-            <img src="/img/icons/linkedin.svg" alt="Linkedin" class="lg:w-[36px] w-[24px]" />
+            <img src="/img/icons/linkedin.svg" alt="Linkedin" class="lg:w-[24px] w-[18px]" />
           </li>
           <li>
-            <img src="/img/icons/github.svg" alt="Github" class="lg:w-[36px] w-[24px]" />
+            <img src="/img/icons/github.svg" alt="Github" class="lg:w-[24px] w-[18px]" />
           </li>
         </ul>
       </div>
