@@ -5,8 +5,8 @@
     <img src="/img/logo/logoV1.png" alt="Nathan Perrelet" class="h-full mr-12 py-1" />
     <nav class="flex justify-between w-full items-center lg:text-lg text-base">
       <ul class="flex gap-6">
-        <li><router-link to="">About me</router-link></li>
-        <li><router-link to="">Showcase</router-link></li>
+        <li><router-link to="/">About me</router-link></li>
+        <li><router-link to="/showcase">Showcase</router-link></li>
         <li><router-link to="">Component</router-link></li>
         <li><router-link to="">Docs</router-link></li>
       </ul>
