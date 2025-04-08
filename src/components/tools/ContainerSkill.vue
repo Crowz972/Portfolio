@@ -2,7 +2,7 @@
   <div
     class="flex flex-col w-full border border-gray-200 rounded skill-container hover:opacity-75 hover:scale-105 transition-all cursor-pointer"
   >
-    <div class="">
+    <div>
       <h2 class="font-bold border-b border-r border-gray-200 rounded-br-md px-4 py-2 w-fit">
         {{ category.toUpperCase() }}
       </h2>
@@ -13,7 +13,7 @@
         :key="index"
         class="w-full flex flex-col items-center justify-center"
       >
-        <img :src="`/img/icons/skill/` + category + `/${skill}.svg`" :alt="skill" width="48px" />
+        <img :src="`/img/icons/skill/${skill}.svg`" :alt="skill" width="48px" />
         <p class="text-sm font-medium text-center mt-2">{{ skill }}</p>
       </div>
     </div>

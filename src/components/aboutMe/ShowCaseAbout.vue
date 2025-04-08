@@ -12,7 +12,7 @@
       >
         <img :src="image.src" :alt="image.alt" class="rounded-md h-full w-full" />
         <div
-          class="absolute cursor-pointer inset-0 bg-black bg-opacity-60 rounded-md flex items-center justify-center text-white text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          class="absolute cursor-pointer inset-0 bg-black bg-opacity-50 rounded-md flex items-center justify-center text-white text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         >
           {{ image.text }}
         </div>

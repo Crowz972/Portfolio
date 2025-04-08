@@ -2,9 +2,19 @@
   <section class="flex flex-col w-full">
     <h2 class="text-5xl font-bold">This is my Showcase</h2>
     <div class="grid grid-cols-12 gap-2 w-full mt-2 items-end">
-      <select-filter class="col-span-2" />
-      <select-filter class="col-span-2" />
-      <search-filter class="col-span-4" />
+      <select-filter
+        class="col-span-2"
+        :options="languages"
+        label="Language"
+        @update-filter="updateLanguageFilter"
+      />
+      <select-filter
+        class="col-span-2"
+        :options="fromOptions"
+        label="From"
+        @update-filter="updateFromFilter"
+      />
+      <search-filter class="col-span-4" @update-filter="updateSearchQuery" />
       <div class="col-span-2" />
       <div class="col-span-1">
         <div class="flex flex-col justify-end">
@@ -36,9 +46,50 @@
       </div>
     </div>
   </section>
+  <content-showcase :filteredImages="filteredImages" />
 </template>
 
 <script setup lang="ts">
-import SelectFilter from '@/components/tools/SelectFilter.vue'
+import { ref, computed } from 'vue'
+import { showcaseImages } from '@/interface/showcase.ts'
+import ContentShowcase from '@/components/showcase/ContentShowcase.vue'
 import SearchFilter from '@/components/tools/SearchFilter.vue'
+import SelectFilter from '@/components/tools/SelectFilter.vue'
+
+const languages = ['JavaScript', 'TypeScript', 'Vue', 'React', 'Angular']
+const fromOptions = ['company', 'school', 'home']
+
+const languageFilter = ref('')
+const fromFilter = ref('')
+const searchQuery = ref('')
+
+const filteredImages = computed(() => {
+  return showcaseImages.filter((image) => {
+    const matchesLanguage = languageFilter.value
+      ? image.language.some((lang) =>
+          lang.toLowerCase().includes(languageFilter.value.toLowerCase()),
+        )
+      : true
+
+    const matchesFrom = fromFilter.value ? image.from === fromFilter.value : true
+
+    const matchesSearch = searchQuery.value
+      ? image.name.toLowerCase().includes(searchQuery.value.toLowerCase())
+      : true
+
+    return matchesLanguage && matchesFrom && matchesSearch
+  })
+})
+
+const updateLanguageFilter = (newFilter: string) => {
+  languageFilter.value = newFilter
+}
+
+const updateFromFilter = (newFilter: string) => {
+  fromFilter.value = newFilter
+}
+
+const updateSearchQuery = (newQuery: string) => {
+  searchQuery.value = newQuery
+}
 </script>

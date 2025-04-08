@@ -1,8 +1,8 @@
 export const formbuilder = [
   {
     collaborator: 2,
-    state: 'en cours',
-    git: 'non partagé',
+    state: 'En cours',
+    git: '',
     text: {
       context:
         "L'objectif de ce projet était de remplacer un formulaire existant utilisé pour collecter les données des clients en vue de la création de leurs futurs sites web. L'ancien formulaire posait des problèmes de maintenabilité et d'évolution en raison du grand nombre de champs et de la diversité des offres proposées. Le but était donc de développer un CMS capable de générer des formulaires de manière dynamique, sans nécessiter de code, simplement en déplaçant des champs.",
