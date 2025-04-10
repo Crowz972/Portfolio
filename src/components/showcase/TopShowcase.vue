@@ -1,6 +1,9 @@
 <template>
-  <section class="flex flex-col w-full">
-    <h2 class="text-5xl font-bold">This is my Showcase</h2>
+  <section class="flex flex-col w-full text-white">
+    <div class="mt-8">
+      <span class="text-5xl font-bold">This is my</span>
+      <span class="text-5xl font-bold text-[--primary-color] ml-3">Showcase</span>
+    </div>
     <div class="grid grid-cols-12 gap-2 w-full mt-2 items-end">
       <select-filter
         class="col-span-2"
@@ -39,7 +42,7 @@
               width="24"
               class="bg-gray-200 p-0.5 rounded"
             />
-            <p class="text-6xl font-light">30</p>
+            <p class="text-6xl font-light pl-4">30</p>
           </div>
           <p class="text-sm font-medium">Results</p>
         </div>

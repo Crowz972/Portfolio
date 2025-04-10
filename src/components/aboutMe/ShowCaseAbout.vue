@@ -1,8 +1,11 @@
 <template>
-  <section class="w-full flex flex-col items-center justify-center mt-24">
+  <section v-fade-in-on-scroll class="w-full flex flex-col items-center justify-center mt-24">
     <div class="w-full flex justify-between items-center">
-      <h2 class="text-3xl font-bold">Recent Project</h2>
-      <ButtonNav name="View All Projects" />
+      <div>
+        <span class="text-4xl font-bold text-white">Recent</span>
+        <span class="text-4xl font-bold text-[--primary-color] pl-2">Project</span>
+      </div>
+      <ButtonNav name="View All Projects" url="/showcase" />
     </div>
     <div class="grid grid-cols-3 gap-24 px-12 my-12 opacity-90">
       <div

@@ -4,7 +4,7 @@ export const showcaseImages = [
     src: '/img/showcase/formbuilder-1.png',
     text: 'Form Builder',
     from: 'company',
-    language: ['Nuxt'],
+    language: ['Nuxt', 'typescript', 'html', 'css', 'appwrite'],
   },
   {
     name: 'phase10',

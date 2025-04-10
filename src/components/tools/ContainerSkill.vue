@@ -1,9 +1,11 @@
 <template>
   <div
-    class="flex flex-col w-full border border-gray-200 rounded skill-container hover:opacity-75 hover:scale-105 transition-all cursor-pointer"
+    class="bg-[#282828] shadow-glow flex flex-col w-full rounded skill-container hover:opacity-75 hover:scale-105 transition-all duration-300"
   >
     <div>
-      <h2 class="font-bold border-b border-r border-gray-200 rounded-br-md px-4 py-2 w-fit">
+      <h2
+        class="font-bold border-b border-r border-gray-200 rounded-tl-md rounded-br-md px-4 py-2 w-fit bg-white text-black"
+      >
         {{ category.toUpperCase() }}
       </h2>
     </div>
@@ -14,7 +16,7 @@
         class="w-full flex flex-col items-center justify-center"
       >
         <img :src="`/img/icons/skill/${skill}.svg`" :alt="skill" width="48px" />
-        <p class="text-sm font-medium text-center mt-2">{{ skill }}</p>
+        <p class="text-sm font-medium text-center mt-2 text-white">{{ skill }}</p>
       </div>
     </div>
   </div>
@@ -39,10 +41,4 @@ const skillImages: Record<string, string[]> = {
 const skillList = computed(() => skillImages[props.category.toLowerCase()] || [])
 </script>
 
-<style scoped>
-.skill-container {
-  box-shadow:
-    rgba(0, 0, 0, 0.12) 0px 1px 3px,
-    rgba(0, 0, 0, 0.24) 0px 1px 2px;
-}
-</style>
+<style scoped></style>

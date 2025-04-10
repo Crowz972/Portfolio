@@ -1,24 +1,35 @@
 <template>
-  <div class="container mx-auto" v-if="selectedProject && projectData[0]">
-    <h2 class="w-full text-center text-5xl font-semibold pt-8 pb-16">{{ selectedProject.text }}</h2>
+  <div
+    class="container mx-auto !px-0 md:!px-[2%] lg:!px-[5%] text-white"
+    v-if="selectedProject && projectData[0]"
+  >
+    <div class="w-full justify-center text-5xl font-semibold pt-8 mb-16">
+      <p class="border-b border-[--hover-blue] w-fit">{{ selectedProject.text }}</p>
+    </div>
     <div class="flex px-8 pb-16 justify-around">
       <img
         :src="selectedProject.src"
         :alt="selectedProject.text"
-        class="aspect-square w-[400px] h-[400px]"
+        class="aspect-square w-[300px] h-[300px] shadow-glow"
       />
       <div class="flex gap-16">
         <div class="flex flex-col justify-between">
-          <div class="flex flex-col items-center justify-center gap-4 py-9 px-5 rounded shadow-md">
-            <p class="text-3xl font-medium">Teams</p>
-            <p class="text-3xl">{{ projectData[0].collaborator }}</p>
+          <div
+            class="flex flex-col items-center justify-center gap-4 py-5 px-5 rounded border border-neutral-300 shadow-glow"
+          >
+            <p class="text-2xl font-medium">Teams</p>
+            <p class="text-2xl">{{ projectData[0].collaborator }}</p>
           </div>
-          <div class="flex flex-col items-center justify-center gap-4 py-9 px-5 rounded shadow-md">
-            <p class="text-3xl font-medium">State</p>
-            <p class="text-3xl">{{ projectData[0].state }}</p>
+          <div
+            class="flex flex-col items-center justify-center gap-4 py-5 px-5 rounded shadow-glow border border-neutral-300"
+          >
+            <p class="text-2xl font-medium">State</p>
+            <p class="text-2xl">{{ projectData[0].state }}</p>
           </div>
         </div>
-        <div class="flex flex-col gap-2 pt-4 items-center shadow-md px-8">
+        <div
+          class="flex flex-col gap-2 pt-4 items-center shadow-glow px-8 rounded border border-neutral-300"
+        >
           <p class="text-3xl font-medium">Languages</p>
           <div class="grid grid-cols-2 gap-6 mt-4 overflow-y">
             <img
@@ -32,7 +43,7 @@
         </div>
       </div>
     </div>
-    <div class="flex flex-col gap-2 pt-4 px-8 py-8 mb-8 rounded">
+    <div class="flex flex-col gap-2 pt-4 px-8 py-8 pb-16 rounded">
       <h3 class="text-3xl font-medium mb-4">Contexte</h3>
       <p class="text-lg font-light">{{ projectData[0].text.context }}</p>
 

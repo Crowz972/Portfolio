@@ -6,11 +6,11 @@
           class="w-4 h-4 text-gray-500 dark:text-gray-400"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
-          fill="none"
+          fill="#FFFFFF"
           viewBox="0 0 20 20"
         >
           <path
-            stroke="currentColor"
+            stroke="#000000"
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
@@ -24,7 +24,7 @@
         type="search"
         id="default-search"
         class="block w-full p-2 ps-10 text-sm text-gray-900 border border-slate-200 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
-        placeholder="Search Mockups, Logos..."
+        placeholder="Search Project ..."
         required
       />
     </div>

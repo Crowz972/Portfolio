@@ -1,15 +1,15 @@
 <template>
-  <div class="grid grid-cols-3 gap-12 px-12 my-12 opacity-90">
+  <div class="grid grid-cols-3 gap-12 px-12 py-12 opacity-90">
     <div v-for="(image, index) in filteredImages" :key="index" class="relative group shadow-xl">
       <router-link :to="'/showcase/project/' + image.name">
         <div class="flex absolute gap-3 top-0 m-2 z-10">
-          <div v-for="(lang, index) in image.language.slice(0, 3)" :key="index" class="w-fit">
+          <div v-for="(lang, index) in image.language.slice(0, 2)" :key="index" class="w-fit">
             <p class="bg-white text-black px-2 py-0.5 rounded-md font-medium">
               {{ lang }}
             </p>
           </div>
 
-          <div v-if="image.language.length > 3" class="relative w-fit">
+          <div v-if="image.language.length > 2" class="relative w-fit">
             <p class="bg-white text-black px-2 py-0.5 rounded-md font-medium cursor-pointer peer">
               ...
             </p>

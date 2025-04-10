@@ -1,5 +1,5 @@
 <template>
-  <main class="container mx-auto">
+  <main class="container mx-auto !px-0 md:!px-[2%] lg:!px-[5%]">
     <home-about />
     <service-about />
     <component-about />

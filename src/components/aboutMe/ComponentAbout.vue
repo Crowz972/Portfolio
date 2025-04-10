@@ -1,11 +1,11 @@
 <template>
-  <section class="flex items-center gap-12 mt-24">
-    <div class="w-1/2">
+  <section v-fade-in-on-scroll class="flex items-center gap-12 mt-24">
+    <div class="w-1/2 text-white">
       <div class="flex flex-col gap-2 mb-6">
         <h2 class="text-5xl font-bold">Modulable</h2>
-        <h2 class="text-3xl font-bold">Components</h2>
+        <h2 class="text-3xl font-bold text-[--primary-color]">Components</h2>
       </div>
-      <p class="text text-neutral-600">
+      <p class="text text-white">
         This section provides an overview of my work: personal projects, reusable components, and
         helpful resources. It's a space to document my progress, share useful tools, and showcase
         what I’ve built while exploring the world of development.
