@@ -1,14 +1,14 @@
 <template>
   <div
     class="container mx-auto !px-0 md:!px-[2%] lg:!px-[5%] text-white"
-    v-if="selectedProject && projectData[0]"
+    v-if="selectedProject && projectData"
   >
     <div class="w-full justify-center text-5xl font-semibold pt-8 mb-16">
       <p class="border-b border-[--hover-blue] w-fit">{{ selectedProject.text }}</p>
     </div>
     <div class="flex px-8 pb-16 justify-around">
       <img
-        :src="selectedProject.src"
+        :src="resolveImagePath(selectedProject.src)"
         :alt="selectedProject.text"
         class="aspect-square w-[300px] h-[300px] shadow-glow"
       />
@@ -18,13 +18,13 @@
             class="flex flex-col items-center justify-center gap-4 py-5 px-5 rounded border border-neutral-300 shadow-glow"
           >
             <p class="text-2xl font-medium">Teams</p>
-            <p class="text-2xl">{{ projectData[0].collaborator }}</p>
+            <p class="text-2xl">{{ projectData.collaborator }}</p>
           </div>
           <div
             class="flex flex-col items-center justify-center gap-4 py-5 px-5 rounded shadow-glow border border-neutral-300"
           >
             <p class="text-2xl font-medium">State</p>
-            <p class="text-2xl">{{ projectData[0].state }}</p>
+            <p class="text-2xl">{{ projectData.state }}</p>
           </div>
         </div>
         <div
@@ -35,7 +35,7 @@
             <img
               v-for="(lang, index) in selectedProject.language || []"
               :key="index"
-              :src="'/img/icons/skill/' + lang.toLowerCase() + '.svg'"
+              :src="resolveImagePath('/img/icons/skill/' + lang.toLowerCase() + '.svg')"
               :alt="lang"
               class="w-[64px] aspect-square"
             />
@@ -45,40 +45,48 @@
     </div>
     <div class="flex flex-col gap-2 pt-4 px-8 py-8 pb-16 rounded">
       <h3 class="text-3xl font-medium mb-4">Contexte</h3>
-      <p class="text-lg font-light">{{ projectData[0].text.context }}</p>
+      <p class="text-lg font-light">{{ projectData.text.context }}</p>
 
       <h3 class="text-3xl font-medium mt-4 mb-4">Travail effectué</h3>
-      <p class="text-lg font-light">{{ projectData[0].text.work }}</p>
+      <p class="text-lg font-light">{{ projectData.text.work }}</p>
 
       <h3 class="text-3xl font-medium mt-4 mb-4">Conclusion</h3>
-      <p class="text-lg font-light">{{ projectData[0].text.conclusion }}</p>
+      <p class="text-lg font-light">{{ projectData.text.conclusion }}</p>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { showcaseImages } from '@/interface/showcase.ts'
+import type { Project } from '@/interface/type/project.ts'
 import { useRoute } from 'vue-router'
 import { computed, ref, watchEffect } from 'vue'
+import { resolveImagePath } from '@/utils/imagePath.ts'
 
 const route = useRoute()
-const projectName = computed(() => route.params.name || route.path.split('/').pop())
+const projectName = computed(() =>
+  typeof route.params.name === 'string'
+    ? route.params.name
+    : Array.isArray(route.params.name)
+      ? route.params.name[0]
+      : route.path.split('/').pop() || '',
+)
 
 const selectedProject = computed(() =>
   showcaseImages.find((img) => img?.name?.toLowerCase() === projectName.value?.toLowerCase()),
 )
 
-const projectData = ref<any>(null)
+const projectData = ref<Project | null>(null)
 const projectModules = import.meta.glob('@/interface/project/*.ts', { eager: true })
 
 watchEffect(() => {
   if (projectName.value) {
     const matchedKey = Object.keys(projectModules).find((key) =>
-      key.toLowerCase().includes(`/interface/project/${projectName.value.toLowerCase()}.ts`),
+      key.toLowerCase().includes(`/interface/project/${projectName.value!.toLowerCase()}.ts`),
     )
     if (matchedKey) {
-      const module = projectModules[matchedKey]
-      projectData.value = module?.[projectName.value]
+      const module = projectModules[matchedKey] as Record<string, Project[]>
+      projectData.value = module[projectName.value as string][0]
     }
   }
 })

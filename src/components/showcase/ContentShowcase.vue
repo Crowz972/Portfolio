@@ -24,7 +24,11 @@
           </div>
         </div>
 
-        <img :src="image.src" :alt="image.text" class="rounded-md h-full w-full" />
+        <img
+          :src="resolveImagePath(image.src)"
+          :alt="image.text"
+          class="rounded-md h-full w-full"
+        />
         <div
           class="absolute inset-0 bg-black bg-opacity-50 rounded-md flex items-center justify-center text-white text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         >
@@ -36,9 +40,12 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
-  filteredImages: Array,
-})
+import type { ShowcaseImage } from '@/interface/type/ShowcaseImage.ts'
+import { resolveImagePath } from '@/utils/imagePath.ts'
+
+defineProps<{
+  filteredImages: ShowcaseImage[]
+}>()
 </script>
 
 <style scoped></style>

@@ -1,4 +1,6 @@
-export const showcaseImages = [
+import type { ShowcaseImage } from '@/interface/type/ShowcaseImage.ts'
+
+export const showcaseImages: ShowcaseImage[] = [
   {
     name: 'formbuilder',
     src: '/img/showcase/formbuilder-1.png',

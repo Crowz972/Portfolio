@@ -13,7 +13,7 @@
         :key="index"
         class="relative group shadow-xl hover:scale-105 transition-all"
       >
-        <img :src="image.src" :alt="image.alt" class="rounded-md h-full w-full" />
+        <img :src="resolveImagePath(image.src)" :alt="image.alt" class="rounded-md h-full w-full" />
         <div
           class="absolute cursor-pointer inset-0 bg-black bg-opacity-50 rounded-md flex items-center justify-center text-white text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         >
@@ -26,6 +26,7 @@
 
 <script setup lang="ts">
 import ButtonNav from '@/components/tools/ButtonNav.vue'
+import { resolveImagePath } from '@/utils/imagePath.ts'
 
 const showcaseImages = [
   { src: '/img/showcase/formbuilder-1.png', alt: 'Form Builder', text: 'Form Builder ' },

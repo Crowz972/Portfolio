@@ -15,7 +15,7 @@
         :key="index"
         class="w-full flex flex-col items-center justify-center"
       >
-        <img :src="`/img/icons/skill/${skill}.svg`" :alt="skill" width="48px" />
+        <img :src="resolveImagePath(`/img/icons/skill/${skill}.svg`)" :alt="skill" width="48px" />
         <p class="text-sm font-medium text-center mt-2 text-white">{{ skill }}</p>
       </div>
     </div>
@@ -24,6 +24,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { resolveImagePath } from '@/utils/imagePath.ts'
 
 const props = defineProps<{
   category: string
