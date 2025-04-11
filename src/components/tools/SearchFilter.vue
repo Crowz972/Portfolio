@@ -24,7 +24,7 @@
         type="search"
         id="default-search"
         class="block w-full p-2 ps-10 text-sm text-gray-900 border border-slate-200 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
-        placeholder="Search Project ..."
+        placeholder="Cherchez le nom d'un projet ..."
         required
       />
     </div>

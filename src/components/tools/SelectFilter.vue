@@ -5,7 +5,7 @@
       @change="emitFilterChange"
       class="w-full h-min flex bg-white z-10 placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease hover:border-slate-400 appearance-none cursor-pointer !outline-[--primary-color]"
     >
-      <option value="">Select {{ label }}</option>
+      <option value="">{{ label }}</option>
       <option v-for="(option, index) in options" :key="index" :value="option">{{ option }}</option>
     </select>
     <svg

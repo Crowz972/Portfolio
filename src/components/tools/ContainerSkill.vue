@@ -34,9 +34,9 @@ const skillImages: Record<string, string[]> = {
   frontend: ['typescript', 'html', 'css', 'vuejs', 'nuxt', 'angular'],
   database: ['appwrite', 'phpmyadmin', 'postgresql'],
   backend: ['symfony', 'java'],
-  manage: ['clickup', 'jira', 'trello'],
-  model: ['figma', 'dribbble'],
-  other: ['salesforce'],
+  gestion: ['clickup', 'jira', 'trello'],
+  maquette: ['figma', 'dribbble'],
+  autre: ['salesforce'],
 }
 
 const skillList = computed(() => skillImages[props.category.toLowerCase()] || [])

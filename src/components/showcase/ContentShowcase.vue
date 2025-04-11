@@ -1,6 +1,12 @@
 <template>
-  <div class="grid grid-cols-3 gap-12 px-12 py-12 opacity-90">
-    <div v-for="(image, index) in filteredImages" :key="index" class="relative group shadow-xl">
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 px-4 sm:px-8 md:px-12 py-12 opacity-90"
+  >
+    <div
+      v-for="(image, index) in filteredImages"
+      :key="index"
+      class="relative group shadow-xl hover:scale-105 transition-all"
+    >
       <router-link :to="'/showcase/project/' + image.name">
         <div class="flex absolute gap-3 top-0 m-2 z-10">
           <div v-for="(lang, index) in image.language.slice(0, 2)" :key="index" class="w-fit">

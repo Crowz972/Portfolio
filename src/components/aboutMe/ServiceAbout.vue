@@ -1,40 +1,46 @@
 <template>
-  <section v-fade-in-on-scroll class="flex items-center gap-12 mt-24">
-    <div class="w-1/2 grid grid-cols-2 gap-12 p-8 rounded-md bg-[--secondary-color] shadow-glow">
+  <section
+    v-fade-in-on-scroll
+    class="flex flex-col-reverse md:flex-row items-center gap-12 mt-24 px-4 md:px-12"
+  >
+    <div
+      class="w-full md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-12 p-6 md:p-8 rounded-md bg-[--secondary-color] shadow-glow"
+    >
       <BlockService
-        content="I am a junior web developer passionate about coding and design."
-        name="Me"
+        content="Je suis un développeur web junior passionné par le codage et la conception."
+        name="Moi"
         img="me"
       />
       <BlockService
-        content="Discover the projects I’ve created with Vue, Tailwind, and other tools."
+        content="Découvrez les projets que j’ai créés avec Vue, Tailwind et d’autres outils."
         name="Showcase"
         img="showcase"
       />
       <BlockService
-        content="Discover reusable Tailwind components I crafted for modern web apps."
-        name="Component"
+        content="Découvrez les composants réutilisables Tailwind que j’ai conçus pour les applications web modernes."
+        name="Composant"
         img="component"
       />
       <BlockService
-        content="Check out my coding cheat sheets to speed up your workflow."
-        name="Docs"
+        content="Jetez un coup d’œil à mes fiches de programmation pour accélérer votre flux de travail."
+        name="Documentation "
         img="docs"
       />
     </div>
-    <div class="w-1/2">
-      <div class="flex flex-col gap-2 mb-6 text-white">
-        <h2 class="text-6xl font-bold">All About</h2>
-        <h2 class="text-5xl font-bold text-[--primary-color]">My Work</h2>
+
+    <div class="w-full md:w-1/2">
+      <div class="flex flex-col gap-2 mb-6 text-white text-center md:text-left">
+        <h2 class="text-4xl md:text-6xl font-bold">Tout sur</h2>
+        <h2 class="text-3xl md:text-5xl font-bold text-[--primary-color]">mes projets</h2>
       </div>
-      <p class="text mb-6 text-white">
-        A collection of skills, projects, components, and resources crafted throughout my
-        development journey.
+      <p class="text text-white mb-4 text-center md:text-left">
+        Une collection de compétences, de projets, de composants et de ressources créés à travers
+        mon parcours de développement.
       </p>
-      <p class="text text-white">
-        This section provides an overview of my work: personal projects, reusable components, and
-        helpful resources. It's a space to document my progress, share useful tools, and showcase
-        what I’ve built while exploring the world of development.
+      <p class="text text-white text-center md:text-left">
+        Cette section donne un aperçu de mon travail : projets personnels, composants réutilisables,
+        et des ressources utiles. C’est un espace pour documenter mes progrès, partager des outils
+        utiles et ce que j’ai construit en explorant le monde du développement.
       </p>
     </div>
   </section>

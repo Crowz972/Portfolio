@@ -1,19 +1,28 @@
 <template>
-  <section v-fade-in-on-scroll class="mt-24 flex flex-col items-center justify-center w-full">
-    <h2 class="text-4xl font-bold text-white">My Skills</h2>
-    <div class="grid grid-cols-12 gap-12 mt-8">
-      <div class="col-span-1" />
-      <ContainerSkill class="col-span-7" category="frontend" />
-      <div class="col-span-1" />
-      <ContainerSkill class="col-span-3" category="backend" />
-      <ContainerSkill class="col-span-4" category="database" />
-      <div class="col-span-1" />
-      <ContainerSkill class="col-span-4" category="model" />
-      <div class="col-span-1" />
-      <ContainerSkill class="col-span-2" category="other" />
-      <div class="col-span-2" />
-      <ContainerSkill class="col-span-5" category="manage" />
-      <div class="col-span-2" />
+  <section v-fade-in-on-scroll class="mt-24 flex flex-col items-center justify-center w-full px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-white text-center">Mes Compétences</h2>
+
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 md:gap-8 mt-8 w-full max-w-[1440px]"
+    >
+      <div class="lg:col-start-2 lg:col-span-7 col-span-1">
+        <ContainerSkill category="frontend" />
+      </div>
+      <div class="lg:col-span-3 col-span-1">
+        <ContainerSkill category="backend" />
+      </div>
+      <div class="lg:col-start-2 lg:col-span-4 col-span-1">
+        <ContainerSkill category="database" />
+      </div>
+      <div class="lg:col-span-4 col-span-1">
+        <ContainerSkill category="maquette" />
+      </div>
+      <div class="lg:col-span-2 col-span-1">
+        <ContainerSkill category="autre" />
+      </div>
+      <div class="lg:col-start-4 lg:col-span-5 col-span-1">
+        <ContainerSkill category="gestion" />
+      </div>
     </div>
   </section>
 </template>
